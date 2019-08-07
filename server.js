@@ -2,6 +2,9 @@ const WebSocket = require('ws');
 const express = require('express');
 const app = express();
 
+var portHttp = Heroku.env.PORT || 80;
+var portWs = Heroku.env.PORT || 80;
+
 
 app.get('/js/drawer.js', function(req, res){
   res.sendFile(__dirname + '/js/drawer.js');
@@ -35,10 +38,10 @@ app.get('*', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-app.listen(80);
+app.listen(portHttp);
 
 
-const server = new WebSocket.Server({ port:1337 });
+const server = new WebSocket.Server({ portWs });
 
 server.on("connection", ws => {
   ws.on("message", message => {
