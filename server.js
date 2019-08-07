@@ -1,6 +1,9 @@
 const WebSocket = require('ws');
 const express = require('express');
+const http = require('http')
+
 const app = express();
+const httpServer = http.createServer(app);
 
 var port = process.env.PORT || 80;
 
@@ -36,10 +39,9 @@ app.get('*', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-app.listen(port);
-
-
-const server = new WebSocket.Server({ port:port });
+const server = new WebSocket.Server({
+  'server': httpServer
+});
 
 server.on("connection", ws => {
   ws.on("message", message => {
@@ -48,3 +50,4 @@ server.on("connection", ws => {
     });
   });
 });
+httpServer.listen(port);
