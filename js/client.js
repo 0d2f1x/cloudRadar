@@ -1,5 +1,4 @@
-var HOST = location.origin.replace(/^http/, 'ws')
-let ws = new WebSocket(HOST);
+let ws = new WebSocket(location.origin.replace(/^http/, 'ws'));
     ws.onmessage = ({data}) => {
       if (data != "Connected!") {
       unpackData(data);
