@@ -2,7 +2,7 @@ const WebSocket = require('ws');
 const express = require('express');
 const app = express();
 
-var portHttp = Heroku.env.PORT || 80;
+var portHttp = process.env.PORT || 80;
 var portWs = 1337;
 
 
@@ -41,7 +41,7 @@ app.get('*', function(req, res){
 app.listen(portHttp);
 
 
-const server = new WebSocket.Server({ portWs });
+const server = new WebSocket.Server({ port:portWs });
 
 server.on("connection", ws => {
   ws.on("message", message => {
