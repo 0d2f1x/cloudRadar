@@ -2,9 +2,7 @@ const WebSocket = require('ws');
 const express = require('express');
 const app = express();
 
-var portHttp = process.env.PORT || 80;
-var portWs = process.env.PORT || 3000;
-
+var port = process.env.PORT || 80;
 
 app.get('/js/drawer.js', function(req, res){
   res.sendFile(__dirname + '/js/drawer.js');
@@ -38,10 +36,10 @@ app.get('*', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-app.listen(portHttp);
+app.listen(port);
 
 
-const server = new WebSocket.Server({ port:portWs });
+const server = new WebSocket.Server({ port:port });
 
 server.on("connection", ws => {
   ws.on("message", message => {
