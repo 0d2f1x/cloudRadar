@@ -3,7 +3,7 @@ var ctx = canvas.getContext("2d");
 var size = 10;
 
 function unpackData(data){
-    icon((Math.floor(Math.random() * 10) + 1));
+    //icon((Math.floor(Math.random() * 10) + 1));
     document.getElementById("map").src = "maps/de_dust2_radar.png";
     data = JSON.parse(data);
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
