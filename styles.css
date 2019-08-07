@@ -1,0 +1,53 @@
+.map {
+  width: 768;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 5px dashed black;
+  border-bottom: 5px dashed black;
+  border-left: 5px dashed black;
+  border-right: 5px dashed black;
+}
+
+.container {
+  width: auto;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team {
+  height: 768;
+  width: 150;
+  float: left;
+  border-top: 5px dashed white;
+  border-bottom: 5px dashed white;
+  border-left: 5px dashed white;
+}
+
+.enemy{
+  height: 768;
+  width: 150;
+  float: right;
+  border-top: 5px dashed white;
+  border-bottom: 5px dashed white;
+  border-right: 5px dashed white;
+}
+
+.info {
+  width: 768;
+  height: 150;
+  display: block;
+  background: black;
+  border-top: 2px dashed white;
+  text-align: center;
+}
+
+BODY {
+  margin: 0;
+  background-image: url("background.png");
+  background-size: auto;
+  background-position: center;
+}
