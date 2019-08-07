@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 var portHttp = process.env.PORT || 80;
-var portWs = process.env.PORT || 3000;
+var portWs = 3000; //process.env.PORT || 3000;
 
 
 app.get('/js/drawer.js', function(req, res){
