@@ -1,7 +1,6 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var size = 10;
-icon("X");
 
 function unpackData(data){
     icon((Math.floor(Math.random() * 10) + 1));
