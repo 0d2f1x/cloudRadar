@@ -7,6 +7,7 @@ const httpServer = http.createServer(app);
 
 var port = process.env.PORT || 80;
 
+{
 app.get('/js/drawer.js', function(req, res){
   res.sendFile(__dirname + '/js/drawer.js');
 });
@@ -19,8 +20,8 @@ app.get('/styles.css', function(req, res){
   res.sendFile(__dirname + '/styles.css');
 });
 
-app.get('/background.png', function(req, res){
-  res.sendFile(__dirname + '/background.png');
+app.get('/images/background.png', function(req, res){
+  res.sendFile(__dirname + '/images/background.png');
 });
 
 app.get('/images/default_dance.png', function(req, res){
@@ -68,9 +69,10 @@ app.get('/images/favicons/10.png', function(req, res){
 app.get('/images/favicons/X.png', function(req, res){
   res.sendFile(__dirname + '/images/favicons/X.png');
 });
+}
 
 app.get('*', function(req, res){
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/pages/maps.html');
 });
 
 const server = new WebSocket.Server({

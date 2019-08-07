@@ -18,24 +18,6 @@
   margin-right: auto;
 }
 
-.team {
-  height: 768;
-  width: 150;
-  float: left;
-  border-top: 5px dashed white;
-  border-bottom: 5px dashed white;
-  border-left: 5px dashed white;
-}
-
-.enemy{
-  height: 768;
-  width: 150;
-  float: right;
-  border-top: 5px dashed white;
-  border-bottom: 5px dashed white;
-  border-right: 5px dashed white;
-}
-
 .info {
   width: 768;
   height: 150;
@@ -47,7 +29,7 @@
 
 BODY {
   margin: 0;
-  background-image: url("background.png");
+  background-image: url("images/background.png");
   background-size: auto;
   background-position: center;
 }
