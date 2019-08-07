@@ -65,6 +65,9 @@ app.get('/images/favicons/9.png', function(req, res){
 app.get('/images/favicons/10.png', function(req, res){
   res.sendFile(__dirname + '/images/favicons/10.png');
 });
+app.get('/images/favicons/X.png', function(req, res){
+  res.sendFile(__dirname + '/images/favicons/X.png');
+});
 
 app.get('*', function(req, res){
   res.sendFile(__dirname + '/index.html');
