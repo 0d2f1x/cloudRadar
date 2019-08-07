@@ -4,4 +4,5 @@ let ws = new WebSocket(location.origin.replace(/^http/, 'ws'));
       unpackData(data);
       }
     }
-    ws.onclose = function(evt) { alert("Connection closed."); };
+    myWebSocket.onopen = function(evt) { document.title = "Xorox's maps | 🌐"; }; 
+    ws.onclose = function(evt) { document.title = "Xorox's maps | ❌"; };
