@@ -74,9 +74,9 @@ server.on("connection", ws => {
 server.clients.forEach(client => {
     if (client.readyState === WebSocket.OPEN) {
       function doStuff() {
-        client.send("ping");
+        client.send("ping!");
       }
-    setInterval(doStuff, 100000);
+    setInterval(doStuff, 40000);
     }
 });
 
