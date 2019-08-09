@@ -3,22 +3,24 @@ var ctx = canvas.getContext("2d");
 var size = 10;
 var map;
 
-function unpackData(data){
-    data = JSON.parse(data);
-    document.getElementById("map").src = "maps/"+ map +"_radar.png";
-    ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
-    map = Object.keys(data)[0];
+function unpackData(data) {
+    try {
+        data = JSON.parse(data);
+        document.getElementById("map").src = "maps/"+ map +"_radar.png";
+        ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
+        map = Object.keys(data)[0];
+    } catch (exc) { console.log("Incorrect input") }
 
-    for (var i in data[map].Enemy){
+    for (var i in data[map].Enemy) {
         if (data[map].Enemy[i].Health > 0) drawRectEnemy(data[map].Enemy[i].X, data[map].Enemy[i].Y);
     }
 
-    for (var i in data[map].Team){
+    for (var i in data[map].Team) {
         if (data[map].Team[i].Health > 0) drawRectTeam(data[map].Team[i].X, data[map].Team[i].Y);
     } 
 }
 
-function drawRectEnemy(X, Y){
+function drawRectEnemy(X, Y) {
     ctx.fillStyle = "red"
     ctx.fillRect(X-size/2, Y-size/2, size, size);
 
@@ -27,7 +29,7 @@ function drawRectEnemy(X, Y){
     ctx.drawImage(img, X-11, Y-7, 22, 14); /* x 22/2 and y 14/2 */
 }
 
-function drawRectTeam(X, Y){
+function drawRectTeam(X, Y) {
     ctx.fillStyle = "blue"
     ctx.fillRect(X-size/2, Y-size/2, size, size);
 
@@ -36,7 +38,7 @@ function drawRectTeam(X, Y){
     ctx.drawImage(img, X-11, Y-7, 22, 14);  x 22/2 and y 14/2 */
 }
 
-function icon(name){
+function icon(name) {
     var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.type = 'image/png';
     link.rel = 'icon';
