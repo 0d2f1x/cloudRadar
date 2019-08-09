@@ -9,15 +9,15 @@ function unpackData(data) {
         document.getElementById("map").src = "maps/"+ map +"_radar.png";
         ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
         map = Object.keys(data)[0];
+
+        for (var i in data[map].Enemy) {
+            if (data[map].Enemy[i].Health > 0) drawRectEnemy(data[map].Enemy[i].X, data[map].Enemy[i].Y);
+        }
+    
+        for (var i in data[map].Team) {
+            if (data[map].Team[i].Health > 0) drawRectTeam(data[map].Team[i].X, data[map].Team[i].Y);
+        } 
     } catch (exc) { console.log("Incorrect input") }
-
-    for (var i in data[map].Enemy) {
-        if (data[map].Enemy[i].Health > 0) drawRectEnemy(data[map].Enemy[i].X, data[map].Enemy[i].Y);
-    }
-
-    for (var i in data[map].Team) {
-        if (data[map].Team[i].Health > 0) drawRectTeam(data[map].Team[i].X, data[map].Team[i].Y);
-    } 
 }
 
 function drawRectEnemy(X, Y) {
