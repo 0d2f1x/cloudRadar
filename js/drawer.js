@@ -12,19 +12,19 @@ function unpackData(data) {
 
         try {
             data[map].Ct.player0;
-            ctColor = "blue"
-            tColor = "red"
+            ctColor = "blue";
+            tColor = "red";
         } catch (ex) {
-            ctColor = "red"
-            tColor = "blue"
+            ctColor = "red";
+            tColor = "blue";
         }
 
         for (var i in data[map].Ct) {
-            if (data[map].Ct[i].Health > 0) drawRectEnemy(data[map].Ct[i].X, data[map].Ct[i].Y);
+            if (data[map].Ct[i].Health > 0) drawRect(data[map].Ct[i].X, data[map].Ct[i].Y, ctColor);
         }
     
         for (var i in data[map].T) {
-            if (data[map].T[i].Health > 0) drawRectTeam(data[map].T[i].X, data[map].T[i].Y);
+            if (data[map].T[i].Health > 0) drawRect(data[map].T[i].X, data[map].T[i].Y, tColor);
         } 
     } catch (exc) { 
         console.log("Incorrect input");
