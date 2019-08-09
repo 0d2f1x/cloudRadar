@@ -3,5 +3,5 @@ let ws = new WebSocket(location.origin.replace(/^http/, 'ws'));
     ws.onopen = function(evt) { document.title = "Xorox's maps | 🌐"; }; 
     ws.onclose = function(evt) {
        document.title = "Xorox's maps | ❌"; 
-       document.getElementById("map").src = "imgaes/default_dance.png";
+       document.getElementById("map").src = "images/default_dance.png";
       };

@@ -19,7 +19,7 @@ function unpackData(data) {
         } 
     } catch (exc) { 
         console.log("Incorrect input") 
-        document.getElementById("map").src = "imgaes/default_dance.png";
+        document.getElementById("map").src = "images/default_dance.png";
     }
 }
 
