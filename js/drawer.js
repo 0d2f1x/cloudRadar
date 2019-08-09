@@ -17,7 +17,10 @@ function unpackData(data) {
         for (var i in data[map].Team) {
             if (data[map].Team[i].Health > 0) drawRectTeam(data[map].Team[i].X, data[map].Team[i].Y);
         } 
-    } catch (exc) { console.log("Incorrect input") }
+    } catch (exc) { 
+        console.log("Incorrect input") 
+        document.getElementById("map").src = "imgaes/default_dance.png";
+    }
 }
 
 function drawRectEnemy(X, Y) {
