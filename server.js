@@ -70,6 +70,16 @@ const server = new WebSocket.Server({
 });
 
 server.on("connection", ws => {
+
+server.clients.forEach(client => {
+    if (client.readyState === WebSocket.OPEN) {
+      function doStuff() {
+        client.send("ping");
+      }
+    setInterval(doStuff, 100000);
+    }
+});
+
   ws.on("message", message => {
     server.clients.forEach(client => {
     if (client.readyState === WebSocket.OPEN) client.send(message);
