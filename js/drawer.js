@@ -10,10 +10,11 @@ function unpackData(data) {
         ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
         map = Object.keys(data)[0];
 
-        if (data[map].Ct.player0) {
+        try {
+            data[map].Ct.player0;
             ctColor = "blue"
             tColor = "red"
-        } else {
+        } catch (ex) {
             ctColor = "red"
             tColor = "blue"
         }
