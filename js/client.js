@@ -4,4 +4,5 @@ let ws = new WebSocket(location.origin.replace(/^http/, 'ws'));
     ws.onclose = function(evt) {
        document.title = "Xorox's maps | ❌"; 
        document.getElementById("map").src = "images/default_dance.png";
+       ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
       };
