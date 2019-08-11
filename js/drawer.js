@@ -1,6 +1,6 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-var map, ctColor, tColor;
+var map, ctColor, tColor, team;
 var size = 10;
 
 function unpackData(data) {
@@ -9,7 +9,7 @@ function unpackData(data) {
         map = Object.keys(data)[0];
         document.getElementById("map").src = "maps/"+ map +"_radar.png";
         ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
-        try { data[map].Ct.player0; ctColor = "blue"; tColor = "red"; } catch (ex) { ctColor = "red"; tColor = "blue"; }
+        try { team = data[map].Ct.player0; ctColor = "blue"; tColor = "red"; } catch (ex) { ctColor = "red"; tColor = "blue"; }
         for (var i in data[map].Ct) if (data[map].Ct[i].Health > 0) drawRect(data[map].Ct[i].X, data[map].Ct[i].Y, ctColor);
         for (var i in data[map].T) if (data[map].T[i].Health > 0) drawRect(data[map].T[i].X, data[map].T[i].Y, tColor);
     } catch (exc) { 
