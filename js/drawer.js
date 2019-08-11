@@ -1,19 +1,14 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-var map;
 var size = 10;
 
 function unpackData(data) {
     try {
         data = JSON.parse(data);
-        map = Object.keys(data)[0];
+        var map = Object.keys(data)[0];
         document.getElementById("map").src = "maps/"+ map +"_radar.png";
         ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
-        if (data[map].Ct.player0 != undefined) {
-            ctColor = "blue"; tColor = "red"; 
-        } else { 
-            ctColor = "red"; tColor = "blue";
-        }
+        if (data[map].Ct.player0 != undefined) { ctColor = "blue"; tColor = "red"; } else { ctColor = "red"; tColor = "blue"; }
         for (var i in data[map].Ct) if (data[map].Ct[i].Health > 0) drawRect(data[map].Ct[i].X, data[map].Ct[i].Y, ctColor);
         for (var i in data[map].T) if (data[map].T[i].Health > 0) drawRect(data[map].T[i].X, data[map].T[i].Y, tColor);
     } catch (exc) { 
