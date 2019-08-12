@@ -24,7 +24,7 @@ function unpackData(data) {
 
 function drawRect(X, Y, color) { 
     ctx.fillStyle = borderColor;
-    ctx.fillRect(X-size/2, Y-size/2, size+1, size+1);
+    ctx.fillRect(X-size/2-1, Y-size/2-1, size+2, size+2);
 
     ctx.fillStyle = color;
     ctx.fillRect(X-size/2, Y-size/2, size, size);
