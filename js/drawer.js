@@ -1,6 +1,6 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-var size = 5;
+var size = 10;
 
 function unpackData(data) {
     try {
@@ -8,7 +8,6 @@ function unpackData(data) {
         var map = Object.keys(data)[0];
         document.getElementById("map").src = "maps/"+ map +"_radar.png";
         ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
-        ctx.beginPath();
         if (data[map].Ct.player0 != undefined) { ctColor = "blue"; tColor = "red"; } else { ctColor = "red"; tColor = "blue"; }
         for (var i in data[map].Ct) if (data[map].Ct[i].Health > 0 && data[map].Ct[i].Dormant == false) {
             drawRect(data[map].Ct[i].X, data[map].Ct[i].Y, ctColor);
@@ -16,8 +15,6 @@ function unpackData(data) {
         for (var i in data[map].T) if (data[map].T[i].Health > 0 && data[map].T[i].Dormant == false) {
             drawRect(data[map].T[i].X, data[map].T[i].Y, tColor);
         }
-        ctx.fill();
-        ctx.stroke();
     } catch (exc) { 
         console.log("Incorrect input");
         document.getElementById("map").src = "images/default_dance.png";
@@ -25,9 +22,11 @@ function unpackData(data) {
 }
 
 function drawRect(X, Y, color) { 
-    ctx.fillStyle = color;
+    ctx.fillStyle = 'blue';
     ctx.strokeStyle = 'black';
-    ctx.arc(X, Y, size, 0, 2 * Math.PI);
+    ctx.rect(X, Y, size/2, size/2);
+    ctx.fill();
+    ctx.stroke();
 }
 
     /*var img = new Image();
