@@ -23,7 +23,7 @@ function unpackData(data) {
 
 function drawRect(X, Y, color) { 
     ctx.fillStyle = color;
-    ctx.strokeStyle = 'white';
+    ctx.strokeStyle = 'black';
     ctx.rect(X-size/2, Y-size/2, size, size);
     ctx.fill();
     ctx.stroke();
