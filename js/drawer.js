@@ -1,6 +1,6 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-var size = 5;
+var size = 10;
 
 function unpackData(data) {
     try {
@@ -23,8 +23,8 @@ function unpackData(data) {
 
 function drawRect(X, Y, color) { 
     ctx.fillStyle = color;
-    ctx.strokeStyle = 'black';
-    ctx.arc(X, Y, size, 0, 2 * Math.PI);
+    ctx.strokeStyle = 'white';
+    ctx.rect(X-size/2, Y-size/2, size, size);
     ctx.fill();
     ctx.stroke();
 }
