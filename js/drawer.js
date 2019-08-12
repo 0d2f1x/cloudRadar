@@ -22,10 +22,10 @@ function unpackData(data) {
 }
 
 function drawRect(X, Y, color) { 
-    ctx.fillStyle = 'blue';
+    ctx.fillStyle = color;
     ctx.strokeStyle = 'black';
     ctx.fillRect(X-size/2, Y-size/2, size, size);
-   // ctx.stroke();
+    ctx.stroke();
 }
 
     /*var img = new Image();
