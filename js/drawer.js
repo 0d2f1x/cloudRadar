@@ -21,7 +21,14 @@ function unpackData(data) {
     }
 }
 
-function drawRect(X, Y, color) { ctx.fillStyle = color; ctx.fillRect(X-size/2, Y-size/2, size, size); }
+function drawRect(X, Y, color) { 
+
+    ctx.fillStyle = color;
+    ctx.strokeStyle = 'white';
+    ctx.rect(X-size/2, Y-size/2, size, size);
+    ctx.fill();
+    ctx.stroke();
+}
 
     /*var img = new Image();
     img.src="images/C4.png";
