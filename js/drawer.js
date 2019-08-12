@@ -7,7 +7,7 @@ function unpackData(data) {
         data = JSON.parse(data);
         var map = Object.keys(data)[0];
         document.getElementById("map").src = "maps/"+ map +"_radar.png";
-        ctx.clearArc(0, 0, myCanvas.width, myCanvas.height);
+        ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
         if (data[map].Ct.player0 != undefined) { ctColor = "blue"; tColor = "red"; } else { ctColor = "red"; tColor = "blue"; }
         for (var i in data[map].Ct) if (data[map].Ct[i].Health > 0 && data[map].Ct[i].Dormant == false) {
             drawRect(data[map].Ct[i].X, data[map].Ct[i].Y, ctColor);
