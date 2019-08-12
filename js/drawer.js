@@ -24,9 +24,8 @@ function unpackData(data) {
 function drawRect(X, Y, color) { 
     ctx.fillStyle = 'blue';
     ctx.strokeStyle = 'black';
-    ctx.rect(X-size/2, Y-size/2, size, size);
-    ctx.fill();
-    ctx.stroke();
+    ctx.fillRect(X-size/2, Y-size/2, size, size);
+   // ctx.stroke();
 }
 
     /*var img = new Image();
