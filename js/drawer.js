@@ -1,13 +1,13 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-var size = 10;
+var size = 5;
 
 function unpackData(data) {
     try {
         data = JSON.parse(data);
         var map = Object.keys(data)[0];
         document.getElementById("map").src = "maps/"+ map +"_radar.png";
-        ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
+        ctx.clearArc(0, 0, myCanvas.width, myCanvas.height);
         if (data[map].Ct.player0 != undefined) { ctColor = "blue"; tColor = "red"; } else { ctColor = "red"; tColor = "blue"; }
         for (var i in data[map].Ct) if (data[map].Ct[i].Health > 0 && data[map].Ct[i].Dormant == false) {
             drawRect(data[map].Ct[i].X, data[map].Ct[i].Y, ctColor);
@@ -24,7 +24,7 @@ function unpackData(data) {
 function drawRect(X, Y, color) { 
     ctx.fillStyle = color;
     ctx.strokeStyle = 'black';
-    ctx.rect(X-size/2, Y-size/2, size, size);
+    ctx.arc(X, Y, size, 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
 }
