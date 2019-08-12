@@ -15,6 +15,8 @@ function unpackData(data) {
         for (var i in data[map].T) if (data[map].T[i].Health > 0 && data[map].T[i].Dormant == false) {
             drawRect(data[map].T[i].X, data[map].T[i].Y, tColor);
         }
+        ctx.fill();
+        ctx.stroke();
     } catch (exc) { 
         console.log("Incorrect input");
         document.getElementById("map").src = "images/default_dance.png";
@@ -23,10 +25,8 @@ function unpackData(data) {
 
 function drawRect(X, Y, color) { 
     ctx.fillStyle = color;
-    //ctx.strokeStyle = 'black';
+    ctx.strokeStyle = 'black';
     ctx.arc(X, Y, size, 0, 2 * Math.PI);
-    ctx.fill();
-    //ctx.stroke();
 }
 
     /*var img = new Image();
