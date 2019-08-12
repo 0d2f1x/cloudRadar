@@ -1,5 +1,6 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
+var borderColor = "black"
 var size = 10;
 
 function unpackData(data) {
@@ -22,10 +23,11 @@ function unpackData(data) {
 }
 
 function drawRect(X, Y, color) { 
+    ctx.fillStyle = borderColor;
+    ctx.fillRect(X-size/2, Y-size/2, size+1, size+1);
+
     ctx.fillStyle = color;
-    ctx.strokeStyle = 'black';
     ctx.fillRect(X-size/2, Y-size/2, size, size);
-    ctx.stroke();
 }
 
     /*var img = new Image();
