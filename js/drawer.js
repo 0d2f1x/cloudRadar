@@ -23,10 +23,10 @@ function unpackData(data) {
 
 function drawRect(X, Y, color) { 
     ctx.fillStyle = color;
-    ctx.strokeStyle = 'black';
+    //ctx.strokeStyle = 'black';
     ctx.arc(X, Y, size, 0, 2 * Math.PI);
     ctx.fill();
-    ctx.stroke();
+    //ctx.stroke();
 }
 
     /*var img = new Image();
