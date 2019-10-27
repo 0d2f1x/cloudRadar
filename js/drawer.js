@@ -18,7 +18,7 @@ function unpackData(data) {
             //if (data[map].Ct.player0 != undefined) { ctColor = "#66FFFF"; tColor = "red"; } else { ctColor = "red"; tColor = "#66FFFF"; }
             for (var i in data[map].Ct) {
                 if (data[map].Ct[i].Health > 0 && data[map].Ct[i].Dormant == false) 
-                    drawRect(data[map].Ct[i].X, data[map].Ct[i].Y, ctColor);
+                    drawRect(data[map].Ct[i].X, data[map].Ct[i].Y, ctColor, data[map].Ct[i].Health);
             }
         } else{
             ctColor = dangerZonceColor;
@@ -26,7 +26,7 @@ function unpackData(data) {
         }    
         for (var i in data[map].T) {
             if (data[map].T[i].Health > 0 && data[map].T[i].Dormant == false) 
-                drawRect(data[map].T[i].X, data[map].T[i].Y, tColor);
+                drawRect(data[map].T[i].X, data[map].T[i].Y, tColor, data[map].T[i].Health);
         }
     } catch (exc) { 
         console.log("Incorrect input");
@@ -34,22 +34,22 @@ function unpackData(data) {
     }
 }
 
-function drawHealth(X, Y){
+function drawHealth(X, Y, health){
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
-    ctx.font = "30px Comic Sans MS";
+    ctx.font = "10px Comic Sans MS";
     ctx.fillStyle = "red";
-    ctx.fillText("Hello World", X, Y); 
+    ctx.fillText(health, X, Y-10); 
 }
 
-function drawRect(X, Y, color) { 
+function drawRect(X, Y, color, health) { 
     ctx.fillStyle = borderColor;
     ctx.fillRect(X-size/2-1, Y-size/2-1, size+2, size+2);
 
     ctx.fillStyle = color;
     ctx.fillRect(X-size/2, Y-size/2, size, size);
 
-    drawHealth(X,Y);
+    drawHealth(X,Y, health);
 }
 
     /*var img = new Image();
