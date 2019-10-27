@@ -34,12 +34,22 @@ function unpackData(data) {
     }
 }
 
+function drawHealth(X, Y){
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    ctx.font = "30px Comic Sans MS";
+    ctx.fillStyle = "red";
+    ctx.fillText("Hello World", X, Y); 
+}
+
 function drawRect(X, Y, color) { 
     ctx.fillStyle = borderColor;
     ctx.fillRect(X-size/2-1, Y-size/2-1, size+2, size+2);
 
     ctx.fillStyle = color;
     ctx.fillRect(X-size/2, Y-size/2, size, size);
+
+    drawHealth(X,Y);
 }
 
     /*var img = new Image();
