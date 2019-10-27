@@ -52,8 +52,8 @@ app.get('/maps/de_train_radar.png', function(req, res){
   res.sendFile(__dirname + '/maps/de_train_radar.png');
 });
 
-app.get('/maps/dz_blackstie_radar.png', function(req, res){
-  res.sendFile(__dirname + '/maps/dz_blackstie_radar.png');
+app.get('/maps/dz_blacksite_radar.png', function(req, res){
+  res.sendFile(__dirname + '/maps/dz_blacksite_radar.png');
 });
 
 app.get('/maps/dz_sirocco_radar.png', function(req, res){
