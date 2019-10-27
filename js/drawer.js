@@ -37,9 +37,9 @@ function unpackData(data) {
 function drawHealth(X, Y, health){
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
-    ctx.font = "10px Comic Sans MS";
-    ctx.fillStyle = "red";
-    ctx.fillText(health, X, Y-10); 
+    ctx.font = "15px roboto";
+    ctx.fillStyle = "#39FF14";
+    ctx.fillText(health, X-5, Y-10); 
 }
 
 function drawRect(X, Y, color, health) { 
