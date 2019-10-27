@@ -2,10 +2,12 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var borderColor = "black"
 var size = 10;
+var output;
 
 function unpackData(data) {
     try {
         data = JSON.parse(data);
+        output = data;
         var map = Object.keys(data)[0];
         document.getElementById("map").src = "maps/"+ map +"_radar.png";
         ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
