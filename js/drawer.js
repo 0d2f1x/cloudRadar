@@ -2,6 +2,8 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var borderColor = "black";
 var dangerZonceColor = "#39FF14";
+var tColor;
+var ctColor;
 var size = 10;
 var output;
 
