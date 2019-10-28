@@ -5,6 +5,7 @@
   margin-left: auto;
   margin-right: auto;
   border-top: 5px solid white;
+  border-bottom: 5px solid white;
   border-left: 5px solid white;
   border-right: 5px solid white;
 }
@@ -24,4 +25,63 @@
 BODY {
   margin: 0;
   color: #fff;
+}
+
+#panel {
+	padding: 2em;
+}
+
+.btn {
+	display: inline-block;
+	color: rgba(255, 255, 255, 0.7);
+	background-color: rgba(255, 255, 255, 0.08);
+	border-color: rgba(255, 255, 255, 0.2);
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0.3rem;
+	transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+	margin: 3px 6px 3px 0px
+}
+
+.btn:hover {
+	color: rgba(255, 255, 255, 0.8);
+	text-decoration: none;
+	background-color: rgba(255, 255, 255, 0.2);
+	border-color: rgba(255, 255, 255, 0.3)
+}
+
+.btn+.btn {
+	margin-left: 1rem
+}
+
+@media screen and (min-width: 64em) {
+	.btn {
+		padding: 0.75rem 1rem;
+	}
+}
+
+@media screen and (min-width: 42em) and (max-width: 64em) {
+	.btn {
+		padding: 0.6rem 0.9rem;
+		font-size: 0.9rem
+	}
+}
+
+@media screen and (max-width: 42em) {
+	.btn {
+		padding: 0.75rem;
+		font-size: 0.9rem
+	}
+	.app>.btn {
+		display: block;
+		width: 100%
+	}
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer
 }
