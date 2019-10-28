@@ -23,7 +23,7 @@
   height: 150;
   display: block;
   background: black;
-  border-top: 2px dashed white;
+  border-top: 2px solid white;
   text-align: center;
 }
 
