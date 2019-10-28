@@ -1,10 +1,10 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var borderColor = "black";
-var dangerZonceColor = "green";
-var tColor = "green";
-var ctColor = "green";
-var size = 20;
+var dangerZonceColor = "#39FF14";
+var tColor;
+var ctColor;
+var size = 10;
 var output;
 var map;
 
