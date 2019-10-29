@@ -12,11 +12,12 @@ function unpackData(data) {
     try {
         data = JSON.parse(data);
         output = data;
-        map = Object.keys(data)[0];
+        map = Object.keys(data)[1];
+        name = data.batya;
         document.getElementById("map").src = "maps/"+ map +"_radar.png";
         ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
         try{
-            if (data[map].Ct.player0 != undefined) { ctColor = "#66FFFF"; tColor = "red"; } else { ctColor = "red"; tColor = "#66FFFF"; }
+            if (data[map].Ct[name] != undefined) { ctColor = "#66FFFF"; tColor = "red"; } else { ctColor = "red"; tColor = "#66FFFF"; }
             for (var i in data[map].Ct) {
                 if (data[map].Ct[i].Health > 0 && data[map].Ct[i].Dormant == false) 
                     drawRect(data[map].Ct[i].X, data[map].Ct[i].Y, ctColor, data[map].Ct[i].Health);
