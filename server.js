@@ -7,6 +7,10 @@ const httpServer = http.createServer(app);
 
 var port = process.env.PORT || 80;
 
+
+app.set('views',path.join(__dirname,'/pages/'));
+app.set("view engine","hbs");
+
 {
 app.get('/js/drawer.js', function(req, res){
   res.sendFile(__dirname + '/js/drawer.js');
@@ -71,7 +75,7 @@ app.get('/images/favicons/X.png', function(req, res){
 
 app.get('*', function(req, res){
   //res.sendFile(__dirname + '/pages/maps.hbs');
-  res.sendFile(__dirname +'/pages/maps', {lol:123});
+  res.render('maps');
 });
 
 const server = new WebSocket.Server({
