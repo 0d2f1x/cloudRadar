@@ -10,7 +10,9 @@ BODY {
 
 #myCanvas {
 	border-right: solid 5px white;
-    border-left: solid 5px white;
+	border-left: solid 5px white;
+	background-image: url(images/default_dance.png);
+    background-size: contain;
 }
 
 img {

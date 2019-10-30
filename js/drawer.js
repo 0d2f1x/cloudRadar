@@ -14,7 +14,7 @@ function unpackData(data) {
         output = data;
         map = Object.keys(data)[1];
         name = data.batya;
-        document.getElementById("map").src = "maps/"+ map +"_radar.png";
+        document.getElementById("myCanvas").style.backgroundImage = "url(maps/"+ map +"_radar.png)";
         ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
         try{
             if (data[map].Ct[name] != undefined) { ctColor = "#66FFFF"; tColor = "red"; } else { ctColor = "red"; tColor = "#66FFFF"; }
@@ -32,7 +32,7 @@ function unpackData(data) {
         }
     } catch (exc) { 
         console.log("Incorrect input");
-        document.getElementById("map").src = "images/default_dance.png";
+        document.getElementById("myCanvas").style.backgroundImage = "url(images/default_dance.png)";
     }
 }
 

@@ -16,7 +16,6 @@ app.get('*', function(req, res){
   res.render('maps');
 });
 
-
 const server = new WebSocket.Server({
   'server': httpServer
 });
