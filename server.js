@@ -76,7 +76,7 @@ app.get('/images/favicons/X.png', function(req, res){
 
 app.get('*', function(req, res){
   //res.sendFile(__dirname + '/pages/maps.hbs');
-  res.render('maps');
+  res.render('maps', {lol:123});
 });
 
 const server = new WebSocket.Server({
