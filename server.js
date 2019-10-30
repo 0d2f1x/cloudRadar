@@ -70,8 +70,8 @@ app.get('/images/favicons/X.png', function(req, res){
 }
 
 app.get('*', function(req, res){
-  var lol = 123;
-  res.sendFile(__dirname + '/pages/maps.hbs');
+  //res.sendFile(__dirname + '/pages/maps.hbs');
+  res.render('/pages/maps.hbs', {lol:123});
 });
 
 const server = new WebSocket.Server({
