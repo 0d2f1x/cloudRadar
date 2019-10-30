@@ -37,13 +37,13 @@ function unpackData(data) {
 }
 
 function drawHealth(X, Y, health){
-    ctx.font = "15px roboto";
+    ctx.font = "20px roboto";
     ctx.fillStyle = "#000000";
-    ctx.fillText(health, X-4, Y-15); 
+    ctx.fillText(health, X-3, Y-15); 
 
-    ctx.font = "15px roboto";
+    ctx.font = "20px roboto";
     ctx.fillStyle = "#39FF14";
-    ctx.fillText(health, X-5, Y-15);
+    ctx.fillText(health, X-4, Y-15);
 }
 
 function drawRect(X, Y, color, health) { 
