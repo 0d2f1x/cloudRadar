@@ -11,7 +11,6 @@ require('./routes')(app);
 app.set('views',path.join(__dirname,'/pages/'));
 app.set("view engine","hbs");
 
-
 app.get('*', function(req, res){
   res.render('maps');
 });
