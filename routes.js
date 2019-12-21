@@ -59,8 +59,4 @@ app.get('/js/drawer.js', function(req, res){
   app.get('/images/favicons/X.png', function(req, res){
     res.sendFile(__dirname + '/images/favicons/X.png');
   });
-
-  app.get('/nod32', function(req, res){
-    res.sendFile(__dirname + '/pages/nod32.html');
-  });
 }
