@@ -12,7 +12,7 @@ function unpackData(data) {
     try {
         data = JSON.parse(data);
         output = data;
-        map = Object.keys(data)[1];
+        map = Object.keys(data)[0];
         name = data.softer;
         document.getElementById("myCanvas").style.backgroundImage = "url(maps/"+ map +"_radar.png)";
         ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
