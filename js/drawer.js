@@ -13,7 +13,7 @@ function unpackData(data) {
         data = JSON.parse(data);
         output = data;
         map = Object.keys(data)[1];
-        name = data.batya;
+        name = data.softer;
         document.getElementById("myCanvas").style.backgroundImage = "url(maps/"+ map +"_radar.png)";
         ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
         try{
