@@ -20,7 +20,7 @@ function unpackData(data) {
             if (data[map].Ct[name] != undefined) { ctColor = "#66FFFF"; tColor = "red"; } else { ctColor = "red"; tColor = "#66FFFF"; }
             for (var i in data[map].Ct) {
                 if (data[map].Ct[i].Health > 0 && data[map].Ct[i].Dormant == false) 
-                    drawRect(data[map].Ct[i].X, data[map].Ct[i].Y, ctColor, data[map].Ct[i].Health);
+                    drawRect(data[map].Ct[i].X, data[map].Ct[i].Z, ctColor, data[map].Ct[i].Health);
             }
         } catch (exc) {
             ctColor = dangerZonceColor;
@@ -28,7 +28,7 @@ function unpackData(data) {
         }    
         for (var i in data[map].T) {
             if (data[map].T[i].Health > 0 && data[map].T[i].Dormant == false) 
-                drawRect(data[map].T[i].X, data[map].T[i].Y, tColor, data[map].T[i].Health);
+                drawRect(data[map].T[i].X, data[map].T[i].Z, tColor, data[map].T[i].Health);
         }
     } catch (exc) { 
         console.log("Incorrect input");
