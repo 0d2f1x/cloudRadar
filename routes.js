@@ -43,6 +43,10 @@ app.get('/js/drawer.js', function(req, res){
   app.get('/maps/de_train_radar.png', function(req, res){
     res.sendFile(__dirname + '/maps/de_train_radar.png');
   });
+
+  app.get('/maps/de_office_radar.png', function(req, res){
+    res.sendFile(__dirname + '/maps/de_office_radar.png');
+  });
   
   app.get('/maps/dz_blacksite_radar.png', function(req, res){
     res.sendFile(__dirname + '/maps/dz_blacksite_radar.png');
@@ -50,6 +54,10 @@ app.get('/js/drawer.js', function(req, res){
   
   app.get('/maps/dz_sirocco_radar.png', function(req, res){
     res.sendFile(__dirname + '/maps/dz_sirocco_radar.png');
+  });
+
+  app.get('/maps/dz_junglety_radar.png', function(req, res){
+    res.sendFile(__dirname + '/maps/dz_junglety_radar.png');
   });
   
   app.get('/images/hideo.jpg', function(req, res){
