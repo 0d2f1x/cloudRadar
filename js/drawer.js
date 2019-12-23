@@ -45,11 +45,11 @@ function drawInfo(X, Y, health, name){
     ctx.fillStyle = "#39FF14";
     ctx.fillText(health, X-5, Y-15);
 
-    ctx.font = "20px roboto";
+    ctx.font = "15px roboto";
     ctx.fillStyle = "#000000";
     ctx.fillText(name, X+14, Y+8); 
 
-    ctx.font = "20px roboto";
+    ctx.font = "15px roboto";
     ctx.fillStyle = "#FFFFFF";
     ctx.fillText(name, X+15, Y+8);
 }
