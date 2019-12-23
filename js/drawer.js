@@ -18,17 +18,17 @@ function unpackData(data) {
         ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
         try{
             if (data[map].Ct[name] != undefined) { ctColor = "#66FFFF"; tColor = "red"; } else { ctColor = "red"; tColor = "#66FFFF"; }
-            for (var i in data[map].Ct) {
-                if (data[map].Ct[i].Health > 0 && data[map].Ct[i].Dormant == false) 
-                    drawRect(data[map].Ct[i].X, data[map].Ct[i].Z, ctColor, data[map].Ct[i].Health, Object.keys(data[map].Ct)[i]);
+            for (var name in data[map].Ct) {
+                if (data[map].Ct[name].Health > 0 && data[map].Ct[name].Dormant == false) 
+                    drawRect(data[map].Ct[name].X, data[map].Ct[name].Z, ctColor, data[map].Ct[name].Health, name);
             }
         } catch (exc) {
             ctColor = dangerZonceColor;
             tColor = dangerZonceColor;
         }    
-        for (var i in data[map].T) {
-            if (data[map].T[i].Health > 0 && data[map].T[i].Dormant == false) 
-                drawRect(data[map].T[i].X, data[map].T[i].Z, tColor, data[map].T[i].Health, Object.keys(data[map].T)[i]);
+        for (var name in data[map].T) {
+            if (data[map].T[name].Health > 0 && data[map].T[name].Dormant == false) 
+                drawRect(data[map].T[name].X, data[map].T[name].Z, tColor, data[map].T[name].Health, name);
         }
     } catch (exc) { 
         console.log("Incorrect input");
