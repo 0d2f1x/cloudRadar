@@ -20,7 +20,7 @@ function unpackData(data) {
             if (data[map].Ct[name] != undefined) { ctColor = "#66FFFF"; tColor = "red"; } else { ctColor = "red"; tColor = "#66FFFF"; }
             for (var i in data[map].Ct) {
                 if (data[map].Ct[i].Health > 0 && data[map].Ct[i].Dormant == false) 
-                    drawRect(data[map].Ct[i].X, data[map].Ct[i].Z, ctColor, data[map].Ct[i].Health);
+                    drawRect(data[map].Ct[i].X, data[map].Ct[i].Z, ctColor, data[map].Ct[i].Health, data[map].Ct[i]);
             }
         } catch (exc) {
             ctColor = dangerZonceColor;
@@ -28,7 +28,7 @@ function unpackData(data) {
         }    
         for (var i in data[map].T) {
             if (data[map].T[i].Health > 0 && data[map].T[i].Dormant == false) 
-                drawRect(data[map].T[i].X, data[map].T[i].Z, tColor, data[map].T[i].Health);
+                drawRect(data[map].T[i].X, data[map].T[i].Z, tColor, data[map].T[i].Health, data[map].T[i]);
         }
     } catch (exc) { 
         console.log("Incorrect input");
@@ -36,7 +36,7 @@ function unpackData(data) {
     }
 }
 
-function drawHealth(X, Y, health){
+function drawInfo(X, Y, health, name){
     ctx.font = "20px roboto";
     ctx.fillStyle = "#000000";
     ctx.fillText(health, X-4, Y-15); 
@@ -44,16 +44,25 @@ function drawHealth(X, Y, health){
     ctx.font = "20px roboto";
     ctx.fillStyle = "#39FF14";
     ctx.fillText(health, X-5, Y-15);
+
+    ctx.font = "20px roboto";
+    ctx.fillStyle = "#000000";
+    ctx.fillText(name, X+14, Y+8); 
+
+    ctx.font = "20px roboto";
+    ctx.fillStyle = "#FFFFFF";
+    ctx.fillText(name, X+15, Y+8);
+
 }
 
-function drawRect(X, Y, color, health) { 
+function drawRect(X, Y, color, health, name) { 
     ctx.fillStyle = borderColor;
     ctx.fillRect(X-size/2-1, Y-size/2-1, size+2, size+2);
 
     ctx.fillStyle = color;
     ctx.fillRect(X-size/2, Y-size/2, size, size);
 
-    drawHealth(X,Y, health);
+    drawInfo(X,Y, health, name);
 }
 
     /*var img = new Image();
