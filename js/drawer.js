@@ -55,12 +55,11 @@ function drawInfo(X, Y, health, name){
 }
 
 function drawRect(X, Y, color, health, name) { 
-    ctx.fillStyle = borderColor;
-    ctx.fillRect(X-size/2-1, Y-size/2-1, size+2, size+2);
-
     ctx.fillStyle = color;
-    ctx.fillRect(X-size/2, Y-size/2, size, size);
-
+    ctx.beginPath();
+    ctx.arc(X, Y, 10, 0, 2 * Math.PI, false);
+    ctx.stroke();
+    ctx.fill();
     drawInfo(X,Y, health, name);
 }
 
