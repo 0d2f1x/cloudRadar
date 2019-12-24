@@ -20,7 +20,7 @@ function unpackData(data) {
             if (data[map].Ct[name] != undefined) { ctColor = "#66FFFF"; tColor = "red"; } else { ctColor = "red"; tColor = "#66FFFF"; }
             for (var name in data[map].Ct) {
                 if (data[map].Ct[name].Health > 0 && data[map].Ct[name].Dormant == false) 
-                    drawRect(data[map].Ct[name].X, data[map].Ct[name].Z, ctColor, data[map].Ct[name].Health, name);
+                    drawCircle(data[map].Ct[name].X, data[map].Ct[name].Z, ctColor, data[map].Ct[name].Health, name);
             }
         } catch (exc) {
             ctColor = dangerZonceColor;
@@ -28,7 +28,7 @@ function unpackData(data) {
         }    
         for (var name in data[map].T) {
             if (data[map].T[name].Health > 0 && data[map].T[name].Dormant == false) 
-                drawRect(data[map].T[name].X, data[map].T[name].Z, tColor, data[map].T[name].Health, name);
+                drawCircle(data[map].T[name].X, data[map].T[name].Z, tColor, data[map].T[name].Health, name);
         }
     } catch (exc) { 
         console.log("Incorrect input");
@@ -54,7 +54,7 @@ function drawInfo(X, Y, health, name){
     ctx.fillText(name, X+15, Y+8);
 }
 
-function drawRect(X, Y, color, health, name) { 
+function drawCircle(X, Y, color, health, name) { 
     ctx.fillStyle = color;
     ctx.beginPath();
     ctx.arc(X, Y, 10, 0, 2 * Math.PI, false);
