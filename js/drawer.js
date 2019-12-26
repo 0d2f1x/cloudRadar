@@ -54,8 +54,8 @@ function drawInfo(X, Y, health, name, angle){
     ctx.fillText(name, X+15, Y+8);
 
     ctx.moveTo(X, Y);
-    let newX = X + 10 * Math.cos(Math.PI * -angle / 180.0);
-    let newY = Y + 10 * Math.sin(Math.PI * -angle / 180.0);
+    let newX = X + 13 * Math.cos(Math.PI * -angle / 180.0);
+    let newY = Y + 13 * Math.sin(Math.PI * -angle / 180.0);
 
     ctx.lineTo(newX, newY);
     ctx.strokeStyle = "black";
@@ -66,7 +66,7 @@ function drawInfo(X, Y, health, name, angle){
 function drawCircle(X, Y, color, health, name, angle) { 
     ctx.fillStyle = color;
     ctx.beginPath();
-    ctx.arc(X, Y, 10, 0, 2 * Math.PI, false);
+    ctx.arc(X, Y, 13, 0, 2 * Math.PI, false);
     ctx.fill();
     drawInfo(X,Y, health, name, angle);
 }
