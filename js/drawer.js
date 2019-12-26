@@ -20,7 +20,7 @@ function unpackData(data) {
             if (data[map].Ct[name] != undefined) { ctColor = "#66FFFF"; tColor = "red"; } else { ctColor = "red"; tColor = "#66FFFF"; }
             for (var name in data[map].Ct) {
                 if (data[map].Ct[name].Health > 0 && data[map].Ct[name].Dormant == false) 
-                    drawCircle(data[map].Ct[name].X, data[map].Ct[name].Z, ctColor, data[map].Ct[name].Health, name);
+                    drawCircle(data[map].Ct[name].X, data[map].Ct[name].Z, ctColor, data[map].Ct[name].Health, name, data[map].Ct[name].ViewAngle);
             }
         } catch (exc) {
             ctColor = dangerZonceColor;
@@ -28,7 +28,7 @@ function unpackData(data) {
         }    
         for (var name in data[map].T) {
             if (data[map].T[name].Health > 0 && data[map].T[name].Dormant == false) 
-                drawCircle(data[map].T[name].X, data[map].T[name].Z, tColor, data[map].T[name].Health, name);
+                drawCircle(data[map].T[name].X, data[map].T[name].Z, tColor, data[map].T[name].Health, name, data[map].T[name].ViewAngle);
         }
     } catch (exc) { 
         console.log("Incorrect input");
@@ -36,7 +36,7 @@ function unpackData(data) {
     }
 }
 
-function drawInfo(X, Y, health, name){
+function drawInfo(X, Y, health, name, angle){
     ctx.font = "20px roboto";
     ctx.fillStyle = "#000000";
     ctx.fillText(health, X-4, Y-15); 
@@ -52,15 +52,23 @@ function drawInfo(X, Y, health, name){
     ctx.font = "15px roboto";
     ctx.fillStyle = "#FFFFFF";
     ctx.fillText(name, X+15, Y+8);
+
+    ctx.moveTo(X, Y);
+    let newX = X + 10 * Math.cos(Math.PI * -angle / 180.0);
+    let newY = Y + 10 * Math.sin(Math.PI * -angle / 180.0);
+
+    ctx.lineTo(newX, newY);
 }
 
-function drawCircle(X, Y, color, health, name) { 
+function drawCircle(X, Y, color, health, name, angle) { 
     ctx.fillStyle = color;
     ctx.beginPath();
     ctx.arc(X, Y, 10, 0, 2 * Math.PI, false);
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 3;
     ctx.stroke();
     ctx.fill();
-    drawInfo(X,Y, health, name);
+    drawInfo(X,Y, health, name, angle);
 }
 
     /*var img = new Image();
