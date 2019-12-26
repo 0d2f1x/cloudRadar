@@ -58,15 +58,15 @@ function drawInfo(X, Y, health, name, angle){
     let newY = Y + 10 * Math.sin(Math.PI * -angle / 180.0);
 
     ctx.lineTo(newX, newY);
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 3;
+    ctx.stroke();
 }
 
 function drawCircle(X, Y, color, health, name, angle) { 
     ctx.fillStyle = color;
     ctx.beginPath();
     ctx.arc(X, Y, 10, 0, 2 * Math.PI, false);
-    ctx.strokeStyle = "black";
-    ctx.lineWidth = 3;
-    ctx.stroke();
     ctx.fill();
     drawInfo(X,Y, health, name, angle);
 }
